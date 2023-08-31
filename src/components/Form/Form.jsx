@@ -1,4 +1,6 @@
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field } from 'formik';
+
+import { FormFlex, Box } from './Form.styled';
 
 export const ContactForm = ({onAdd}) => {
 return <Formik
@@ -8,8 +10,8 @@ return <Formik
     }}
     onSubmit={
         values => onAdd(values)}>
-    <Form>
-    <label>
+    <FormFlex>
+    <Box>
             Name
         <Field
     type="text"
@@ -19,8 +21,8 @@ return <Formik
     >
             
         </Field>
-        </label>
-    <label>
+        </Box>
+    <Box>
             Number
             <Field
     type="tel"
@@ -30,8 +32,8 @@ return <Formik
     >
             
         </Field>
-        </label>
+        </Box>
         <button type='submit'>Add contact</button>
-</Form>
+</FormFlex>
 </Formik>
 }
